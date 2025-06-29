@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="pe.edu.upeu.bibliotecafx.controller.LoginController"
+           style="-fx-background-color: linear-gradient(to bottom right, #667eea, #764ba2);">
+    
+    <!-- Fondo con efecto de gradiente -->
+    <Rectangle style="-fx-fill: linear-gradient(to bottom right, #667eea, #764ba2);" width="800" height="600"/>
+    
+    <!-- Contenedor principal -->
+    <VBox alignment="CENTER" spacing="30" maxWidth="450" maxHeight="550">
+        
+        <!-- Tarjeta principal -->
+        <JFXCard style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 20, 0, 0, 10);" 
+                 maxWidth="400" maxHeight="500">
+            
+            <VBox alignment="CENTER" spacing="25" style="-fx-padding: 40px;">
+                
+                <!-- Logo y título -->
+                <VBox alignment="CENTER" spacing="15">
+                    <FontAwesomeIconView glyphName="BOOK" size="48" style="-fx-fill: #667eea;"/>
+                    <Text text="Sistema de Biblioteca" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-fill: #2c3e50;"/>
+                    <Text text="Universidad Peruana Unión" style="-fx-font-size: 16px; -fx-fill: #667eea; -fx-font-style: italic;"/>
+                </VBox>
+                
+                <!-- Formulario -->
+                <VBox spacing="20" maxWidth="300">
+                    
+                    <!-- Campo de email -->
+                    <VBox spacing="8">
+                        <Label text="Email" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #495057;"/>
+                        <JFXTextField fx:id="emailField" promptText="Ingrese su email" 
+                                     style="-fx-font-size: 14px; -fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 12px 15px;"/>
+                    </VBox>
+                    
+                    <!-- Campo de contraseña -->
+                    <VBox spacing="8">
+                        <Label text="Contraseña" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #495057;"/>
+                        <JFXPasswordField fx:id="passwordField" promptText="Ingrese su contraseña" 
+                                         style="-fx-font-size: 14px; -fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 12px 15px;"/>
+                    </VBox>
+                    
+                    <!-- Botones -->
+                    <VBox spacing="12" style="-fx-padding-top: 10px;">
+                        <JFXButton fx:id="loginButton" text="Iniciar Sesión" 
+                                  style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #667eea; -fx-text-fill: white; -fx-background-radius: 25; -fx-padding: 15px 30px; -fx-cursor: hand;" 
+                                  maxWidth="Infinity"/>
+                        <JFXButton fx:id="registerButton" text="Registrarse como Lector" 
+                                  style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: transparent; -fx-text-fill: #667eea; -fx-border-color: #667eea; -fx-border-width: 2; -fx-border-radius: 25; -fx-padding: 12px 25px; -fx-cursor: hand;" 
+                                  maxWidth="Infinity"/>
+                    </VBox>
+                    
+                    <!-- Mensaje de estado -->
+                    <JFXSnackbar fx:id="statusSnackbar" style="-fx-background-color: transparent;"/>
+                    
+                </VBox>
+                
+                <!-- Información adicional -->
+                <VBox alignment="CENTER" spacing="8" style="-fx-padding-top: 20px;">
+                    <Text text="Solo bibliotecarios y administradores pueden acceder al sistema" 
+                          style="-fx-font-size: 12px; -fx-fill: #6c757d; -fx-text-alignment: center;" 
+                          wrappingWidth="300"/>
+                    <Text text="Los lectores pueden registrarse para solicitar préstamos" 
+                          style="-fx-font-size: 12px; -fx-fill: #6c757d; -fx-text-alignment: center;" 
+                          wrappingWidth="300"/>
+                </VBox>
+                
+            </VBox>
+            
+        </JFXCard>
+        
+    </VBox>
+    
+</StackPane> 

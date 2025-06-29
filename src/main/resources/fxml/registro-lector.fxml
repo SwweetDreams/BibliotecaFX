@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.paint.Color?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="pe.edu.upeu.bibliotecafx.controller.RegistroLectorController"
+      spacing="16" alignment="CENTER"
+      styleClass="main-container"
+      stylesheets="@../css/jfoenix-styles.css">
+    
+    <padding>
+        <Insets top="20" right="50" bottom="20" left="50"/>
+    </padding>
+    
+    <!-- Título -->
+    <VBox alignment="CENTER" spacing="8">
+        <JFXHamburger styleClass="jfx-hamburger"/>
+        <Text text="📖 Registro de Lector" styleClass="title-text"/>
+        <Text text="Universidad Peruana Unión" styleClass="subtitle-text"/>
+    </VBox>
+    
+    <!-- Formulario de Registro -->
+    <VBox spacing="12" maxWidth="450" alignment="CENTER">
+        
+        <!-- Nombre y Apellido en la misma fila -->
+        <HBox spacing="15">
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Nombre" styleClass="form-label"/>
+                <JFXTextField fx:id="nombreField" 
+                             promptText="Ingrese su nombre"
+                             prefHeight="35"
+                             styleClass="jfx-text-field"/>
+            </VBox>
+            
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Apellido" styleClass="form-label"/>
+                <JFXTextField fx:id="apellidoField" 
+                             promptText="Ingrese su apellido"
+                             prefHeight="35"
+                             styleClass="jfx-text-field"/>
+            </VBox>
+        </HBox>
+        
+        <!-- Email -->
+        <VBox spacing="4">
+            <Label text="Correo Electrónico" styleClass="form-label"/>
+            <JFXTextField fx:id="emailField" 
+                         promptText="ejemplo@upeu.edu.pe"
+                         prefHeight="35"
+                         styleClass="jfx-text-field"/>
+        </VBox>
+        
+        <!-- Teléfono -->
+        <VBox spacing="4">
+            <Label text="Teléfono" styleClass="form-label"/>
+            <JFXTextField fx:id="telefonoField" 
+                         promptText="Ingrese su teléfono"
+                         prefHeight="35"
+                         styleClass="jfx-text-field"/>
+        </VBox>
+        
+        <!-- Dirección -->
+        <VBox spacing="4">
+            <Label text="Dirección" styleClass="form-label"/>
+            <JFXTextArea fx:id="direccionField" 
+                        promptText="Ingrese su dirección"
+                        prefRowCount="2"
+                        styleClass="jfx-text-area"/>
+        </VBox>
+        
+        <!-- Contraseña y Confirmar Contraseña en la misma fila -->
+        <HBox spacing="15">
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Contraseña" styleClass="form-label"/>
+                <JFXPasswordField fx:id="passwordField" 
+                                 promptText="Ingrese su contraseña"
+                                 prefHeight="35"
+                                 styleClass="jfx-password-field"/>
+            </VBox>
+            
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Confirmar Contraseña" styleClass="form-label"/>
+                <JFXPasswordField fx:id="confirmPasswordField" 
+                                 promptText="Confirme su contraseña"
+                                 prefHeight="35"
+                                 styleClass="jfx-password-field"/>
+            </VBox>
+        </HBox>
+        
+        <!-- Checkbox de términos -->
+        <JFXCheckBox fx:id="termsCheckBox" 
+                     text="Acepto los términos y condiciones"
+                     styleClass="jfx-check-box"/>
+        
+        <!-- Botones -->
+        <VBox spacing="8">
+            <JFXButton fx:id="registerButton" 
+                       text="REGISTRARSE"
+                       maxWidth="Infinity"
+                       prefHeight="40"
+                       styleClass="jfx-button"/>
+            
+            <JFXButton fx:id="cancelButton" 
+                       text="CANCELAR"
+                       maxWidth="Infinity"
+                       prefHeight="35"
+                       styleClass="jfx-button,secondary"/>
+        </VBox>
+        
+        <!-- Mensaje de estado -->
+        <Label fx:id="statusLabel" 
+               styleClass="status-label"
+               visible="false"/>
+        
+    </VBox>
+    
+    <!-- Información adicional -->
+    <VBox alignment="CENTER" spacing="4">
+        <Separator styleClass="info-separator"/>
+        <Text text="Los lectores pueden solicitar préstamos de libros" styleClass="info-text"/>
+        <Text text="Su cuenta será activada por un bibliotecario" styleClass="info-text"/>
+        <Text text="© 2024 Universidad Peruana Unión - Todos los derechos reservados" styleClass="copyright-text"/>
+    </VBox>
+    
+</VBox> 

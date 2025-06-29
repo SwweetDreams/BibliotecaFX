@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.paint.Color?>
+
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="pe.edu.upeu.bibliotecafx.controller.LoginController"
+           fx:id="rootContainer"
+           styleClass="main-container"
+           stylesheets="@../css/jfoenix-styles.css">
+    
+    <VBox spacing="30" alignment="CENTER">
+        <padding>
+            <Insets top="50" right="50" bottom="50" left="50"/>
+        </padding>
+        
+        <!-- Logo y título -->
+        <VBox alignment="CENTER" spacing="15">
+            <JFXHamburger styleClass="jfx-hamburger"/>
+            <Text text="📚 BibliotecaFX" styleClass="title-text"/>
+            <Text text="Sistema de Gestión Bibliotecaria" styleClass="subtitle-text"/>
+            <Text text="Universidad Peruana Unión" styleClass="institution-text"/>
+        </VBox>
+        
+        <!-- Formulario de login -->
+        <VBox fx:id="loginContainer" spacing="25" maxWidth="400" alignment="CENTER">
+            
+            <!-- Campo de email -->
+            <VBox spacing="8">
+                <Label text="Correo Electrónico" styleClass="form-label"/>
+                <JFXTextField fx:id="emailField" 
+                             promptText="ejemplo@upeu.edu.pe"
+                             prefHeight="50"
+                             styleClass="jfx-text-field"/>
+            </VBox>
+            
+            <!-- Campo de contraseña -->
+            <VBox spacing="8">
+                <Label text="Contraseña" styleClass="form-label"/>
+                <JFXPasswordField fx:id="passwordField" 
+                                 promptText="Ingrese su contraseña"
+                                 prefHeight="50"
+                                 styleClass="jfx-password-field"/>
+            </VBox>
+            
+            <!-- Checkbox "Recordar sesión" -->
+            <JFXCheckBox fx:id="rememberMeCheckBox" 
+                         text="Recordar mi sesión"
+                         styleClass="jfx-check-box"/>
+            
+            <!-- Botones -->
+            <VBox spacing="15">
+                <JFXButton fx:id="loginButton" 
+                           text="INICIAR SESIÓN"
+                           maxWidth="Infinity"
+                           prefHeight="50"
+                           styleClass="jfx-button"/>
+                
+                <JFXButton fx:id="registerButton" 
+                           text="REGISTRARSE COMO LECTOR"
+                           maxWidth="Infinity"
+                           prefHeight="45"
+                           styleClass="jfx-button,secondary"/>
+            </VBox>
+            
+            <!-- Mensaje de estado -->
+            <Label fx:id="statusLabel" 
+                   styleClass="status-label"
+                   visible="false"/>
+            
+        </VBox>
+        
+        <!-- Información adicional -->
+        <VBox alignment="CENTER" spacing="8">
+            <Separator styleClass="info-separator"/>
+            <Text text="Solo bibliotecarios y administradores pueden acceder al sistema" styleClass="info-text"/>
+            <Text text="Los lectores pueden registrarse para solicitar préstamos" styleClass="info-text"/>
+            <Text text="© 2024 Universidad Peruana Unión - Todos los derechos reservados" styleClass="copyright-text"/>
+        </VBox>
+    </VBox>
+    
+</StackPane> 

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="pe.edu.upeu.bibliotecafx.controller.RegistroLectorController"
+      styleClass="register-container" spacing="20" alignment="CENTER">
+    
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+    
+    <!-- Título -->
+    <VBox alignment="CENTER" spacing="10">
+        <Text text="📖" styleClass="logo-text"/>
+        <Text text="Registro de Lector" styleClass="title-text"/>
+        <Text text="Universidad Peruana Unión" styleClass="subtitle-text"/>
+    </VBox>
+    
+    <!-- Formulario de Registro -->
+    <VBox spacing="15" maxWidth="400">
+        
+        <!-- Nombre -->
+        <VBox spacing="5">
+            <Label text="Nombre:" styleClass="form-label"/>
+            <TextField fx:id="nombreField" promptText="Ingrese su nombre" styleClass="form-field"/>
+        </VBox>
+        
+        <!-- Apellido -->
+        <VBox spacing="5">
+            <Label text="Apellido:" styleClass="form-label"/>
+            <TextField fx:id="apellidoField" promptText="Ingrese su apellido" styleClass="form-field"/>
+        </VBox>
+        
+        <!-- Email -->
+        <VBox spacing="5">
+            <Label text="Email:" styleClass="form-label"/>
+            <TextField fx:id="emailField" promptText="Ingrese su email" styleClass="form-field"/>
+        </VBox>
+        
+        <!-- Teléfono -->
+        <VBox spacing="5">
+            <Label text="Teléfono:" styleClass="form-label"/>
+            <TextField fx:id="telefonoField" promptText="Ingrese su teléfono" styleClass="form-field"/>
+        </VBox>
+        
+        <!-- Dirección -->
+        <VBox spacing="5">
+            <Label text="Dirección:" styleClass="form-label"/>
+            <TextArea fx:id="direccionField" promptText="Ingrese su dirección" styleClass="form-field" prefRowCount="3"/>
+        </VBox>
+        
+        <!-- Contraseña -->
+        <VBox spacing="5">
+            <Label text="Contraseña:" styleClass="form-label"/>
+            <PasswordField fx:id="passwordField" promptText="Ingrese su contraseña" styleClass="form-field"/>
+        </VBox>
+        
+        <!-- Confirmar Contraseña -->
+        <VBox spacing="5">
+            <Label text="Confirmar Contraseña:" styleClass="form-label"/>
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirme su contraseña" styleClass="form-field"/>
+        </VBox>
+        
+        <!-- Botones -->
+        <VBox spacing="10">
+            <Button fx:id="registerButton" text="Registrarse" styleClass="primary-button" maxWidth="Infinity"/>
+            <Button fx:id="cancelButton" text="Cancelar" styleClass="secondary-button" maxWidth="Infinity"/>
+        </VBox>
+        
+        <!-- Mensaje de estado -->
+        <Label fx:id="statusLabel" styleClass="status-label" visible="false" wrapText="true"/>
+        
+    </VBox>
+    
+    <!-- Información adicional -->
+    <VBox alignment="CENTER" spacing="5">
+        <Text text="Los lectores pueden solicitar préstamos de libros" styleClass="info-text"/>
+        <Text text="Su cuenta será activada por un bibliotecario" styleClass="info-text"/>
+    </VBox>
+    
+    <stylesheets>
+        "/css/login.css"
+    </stylesheets>
+    
+</VBox> 
